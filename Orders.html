@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Aberick Shoes</title>
+</head>
+<body>
+    <div id="titreMagasin">
+        LISTE DES COMMANDES
+    </div>
+    
+    <div id="bars_marque">
+        <p><i class="fa fa-bars"></i></p>
+        <p id="Marque">Aberick Shoes</p>
+        <p><i class="fa fa-search"></i></p>
+    </div>
+    
+    <nav id="navMenu">
+        <ul id="ulMenu">
+            <p><i class="fa fa-times"></i></p>
+            <div id="ulwallpaper">
+                <p id="ulMarque">Aberick Shoes</p>
+            </div>
+            <li id="liMenu"><a href="index.html">Acceuil</a></li>
+            <li id="liMenu"><a href="talons&sacs.html">Talons & Sacs a mains</a></li>
+            <li id="liMenu"><a href="tenis.html">Tenis</a></li>
+            <li id="liMenu"><a href="paires.html">Paires monsieurs</a></li>
+            <li id="liMenu"><a href="AdminPanel.html">Admin</a></li>
+            <li id="liMenu"><a href="">657489942/whatsapp</a></li>
+        </ul>
+    </nav>
+
+
+
+    <div id="diaporama">
+        <figure>
+            <img src="images/aberickslide5.jpg">
+            <img src="images/aberickslide6.jpg">
+            <img src="images/aberickslide7.jpg">
+            <img src="images/aberickslide2.jpg">
+            <img src="images/aberickslide3.jpg">
+            <img src="images/aberickslide4.jpg">
+
+           
+        </figure>
+    </div>
+
+    <div id="scrollviewpromo">
+        <p>special promo</p>
+        <ul class="fuu"></ul>
+      </div>
+        
+    
+
+
+    
+    <ul class="ouf"></ul>
+
+    <nav id="navBottomMenu">
+        <ul id="ulBottomMenu">
+            <li id="liBottomMenu"><a href="index.html" class="actifBottom"><i class="fa fa-home"></i>Home</a></li>
+            <li id="liBottomMenu" class="BottomCategory"><a href="#"><i class="fa fa-list"></i>category</a></li>
+            <li id="liBottomMenu" class="BottomSearch"><a href="#"><i class="fa fa-search"></i>search</a></li>
+            <li id="liBottomMenu"><a href="https://wa.me/657489964"><i class="fa fa-phone"></i>contact</a></li>
+        </ul>
+    </nav>
+
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+        import { getDatabase, set, ref, push, child, onValue, onChildAdded, get, update, remove,query, orderByChild, equalTo } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+        import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL, listAll} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-storage.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+      
+
+
+        // MODULE FIREBASE IMPORT/EXPORT
+        import { mouf } from './app.js'
+         mouf()
+
+      
+        // Initialize Firebase
+        const app = initializeApp(mouf());
+        const database = getDatabase(app)
+
+
+
+        
+        
+    //LES VARIABLES
+    
+     
+     
+     //------------------FIREBASE DATABASE TOUS LES PRODUITS-------------------------------
+     const realDB = getDatabase()
+     /**/var PromoArrayOfProducts = []
+     var ArrayOfProducts = []
+     function GetdataFromRealTimeDB(URL) {
+         const DBref = ref(realDB);
+         
+        get(child(DBref, 'OrdersLinks')).then((snapshot)=>{
+           snapshot.forEach(prod => {
+               ArrayOfProducts.push(prod.val())
+           });
+           AddAllProducts()
+        })
+
+
+
+     }
+
+
+
+     function AddAllProducts(){
+         let i = 0
+         ArrayOfProducts.forEach(prod => {
+             AddAProduct(prod, i++)
+         });
+     }
+
+
+     function AddAProduct(product, index){
+        var ouf = document.querySelector('.ouf')
+        var fuu = document.querySelector('.fuu')
+
+
+
+        var div1 = document.createElement('div')
+        div1.className = 'productdiv'
+        ouf.appendChild(div1)
+
+               var img = document.createElement('img')
+               img.className = 'productimg'
+               var li1 = document.createElement('li')
+               li1.className = 'li1img'
+               var li2 = document.createElement('li')
+               li2.className = 'li2img'
+               var li3 = document.createElement('li')
+               li3.className = 'li3img'
+               var li4 = document.createElement('li')
+               li4.className = 'li4img'
+               var li5 = document.createElement('li')
+               li5.className = 'li5img'
+               var li6 = document.createElement('li')
+               li6.className = 'li6img'
+               var li7 = document.createElement('li')
+               li7.className = 'li7img'
+               var li8 = document.createElement('li')
+               li8.className = 'li8img'
+               div1.appendChild(img)
+               div1.appendChild(li1)
+               div1.appendChild(li2)
+               div1.appendChild(li3)
+               div1.appendChild(li4)
+               div1.appendChild(li5)
+               div1.appendChild(li6)
+               div1.appendChild(li7)
+               div1.appendChild(li8)
+
+                
+                li1.innerText = product.MyImageName;
+                li2.innerText = product.PrixduProduit;
+                li3.innerText = product.TauxPrmotion;
+                li4.innerText = product.NewPrixProduit;
+                li5.innerText = product.CodeProduit;
+                li6.innerText = 'ClientName: ' + product.ClientName;
+                li7.innerText = 'ClientNumber: ' + product.ClientNumber;
+                li8.innerText = 'Pointure: ' + product.Pointure;
+
+                if(li4.innerText != null){
+                    li2.classList.add('barre')
+                }
+
+                
+                if(li3.innerText == "-100%"){
+                    li3.classList.add('liInvisible')
+                    li4.classList.add('liInvisible')
+                    li2.classList.remove('barre')
+                }
+
+
+                function GetimgFromRealTimeDB() {
+         
+         
+         
+        get(child(DBref, 'ImageLinks/' + li1.innerText)).then((snapshot)=>{
+           if(snapshot.exists()){
+             img.src = snapshot.val().ImageUrl
+           }
+
+           })
+           .catch((error)=>{
+            alert("unsuccesful, error "+error)
+           });
+
+
+        }
+
+        GetimgFromRealTimeDB
+
+
+
+
+                img.addEventListener('click', function(){
+                    window.open('ProductsDetails.html')
+
+                    localStorage.setItem('imgdetails', product.ImageUrl)
+                    localStorage.setItem('namedetails', product.MyImageName)
+                    localStorage.setItem('pricedetails', product.MyImagePrice)
+
+
+                })
+     }
+
+
+    
+
+
+     
+
+
+
+     
+     //retrieve.onclick = GetdataFromRealTimeDB
+     window.onload = GetdataFromRealTimeDB
+    // window.onload = GetPromodataFromRealTimeDB
+
+      </script>
+
+
+
+    
+</body>
+</html>

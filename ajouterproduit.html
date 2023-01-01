@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="titreMagasin">
+        ESPACE ADMINISTRATEUR
+    </div>
+
+    <div id="bars_marque">
+        <p><i class="fa fa-bars"></i></p>
+        <p id="Marque">Add products</p>
+        <p><i class="fa fa-search"></i></p>
+    </div>
+
+    <nav id="navMenu">
+        <ul id="ulMenu">
+            <p><i class="fa fa-times"></i></p>
+            <div id="ulwallpaper">
+                <p id="ulMarque">Aberick Shoes</p>
+            </div>
+            <li id="liMenu"><a href="index.html">Acceuil</a></li>
+            <li id="liMenu"><a href="talons&sacs.html">Talons & Sacs a mains</a></li>
+            <li id="liMenu"><a href="tenis.html">Tenis</a></li>
+            <li id="liMenu"><a href="paires.html">Paires monsieurs</a></li>
+            <li id="liMenu"><a href="AdminPanel.html">Admin</a></li>
+            <li id="liMenu"><a href="">658592386/whatsapp</a></li>
+        </ul>
+    </nav>
+
+    
+
+<div id="divAjouterProduit">
+    <button id="select">select image</button>
+    <img id="myimg"> <label id="progress"></label>
+    
+
+   <input type="text" id="imgname" placeholder="entrez le nom du produit">
+    <input type="text" id="imgprice" placeholder="entrez le prix du produit">
+    <div id="">
+        <p>selectionner la categorie</p>
+        <select name="selectionner la categorie" id="categorie">
+            <option value="divers">divers</option>
+            <option value="talonssac">talons&sac</option>
+            <option value="tenis">tenis</option>
+            <option value="paire">paires monsieur</option>
+        </select>
+    </div>
+
+    
+
+    <div>
+    <p>selectionner le type de tendance</p>
+        <select name="selectionner le mode" id="mode">
+            <option value="homme">homme</option>
+            <option value="femme">femme</option>
+            <option value="enfant">enfant</option>
+        </select>
+    </div>
+    
+    <div id="divPromotion">
+    <p>effectuer une promotion</p>
+    <select name="effectuer une promotion" id="promo">
+        <option value="non">non</option>
+        <option value="oui">oui</option>
+    </select>
+    <input type="text" id="newimgprice" placeholder="entrez le nouveau prix">
+    </div>
+
+    <button id="upload">upload image</button>
+
+</div>
+    
+    <ul class="ouf"></ul>
+
+
+    <nav id="navBottomMenu">
+        <ul id="ulBottomMenu">
+            <li id="liBottomMenu"><a href="index.html" class="actifBottom"><i class="fa fa-home"></i>Home</a></li>
+            <li id="liBottomMenu" class="BottomCategory"><a href="#"><i class="fa fa-list"></i>category</a></li>
+            <li id="liBottomMenu" class="BottomSearch"><a href="#"><i class="fa fa-search"></i>search</a></li>
+            <li id="liBottomMenu"><a href="https://wa.me/657489964"><i class="fa fa-phone"></i>contact</a></li>
+        </ul>
+    </nav>
+    
+    
+
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+        import { getDatabase, set, ref, push, child, onValue, onChildAdded, get, update, remove } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+        import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL, listAll} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-storage.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+     
+
+
+        // MODULE FIREBASE IMPORT/EXPORT
+        import { mouf } from './app.js'
+       // import { SavedatatoRealTimeDB } from './app.js'
+         mouf()
+
+      
+        // Initialize Firebase
+        const app = initializeApp(mouf());
+        const database = getDatabase(app)
+
+
+       
+        
+        
+    //LES VARIABLES
+
+
+      
+      var select = document.getElementById('select')
+      var upload = document.getElementById('upload')
+      var myimg = document.getElementById('myimg')
+      var progress = document.getElementById('progress')
+      
+      var files = [];
+      var reader = new FileReader()
+
+    select.addEventListener('click', function(e){
+    var input = document.createElement("input");
+    input.type = "file"
+    
+
+    input.onchange = e => {
+        files = e.target.files;
+        //var extension = GetImgExt();
+       
+        reader.readAsDataURL(files[0])
+    }
+
+    reader.onload = function(){
+            myimg.src = reader.result;
+        }
+
+    input.click();
+})
+
+  
+
+  //FONCTION TO UPLOAD IMAGE IN FIREBASE.........................
+     async function Uploadprocess() {
+        var imgname = document.getElementById('imgname').value
+        var imgprice = document.getElementById('imgprice').value
+        var categorie = document.getElementById('categorie').value
+        var mode = document.getElementById('mode').value
+
+         var ImgToUpload = files[0]
+
+         const metaData = {
+             contentType: ImgToUpload.type  
+         }
+        
+         const storage = getStorage();
+         const storageRef = sRef(storage, "MyImages/"+ imgname);
+         const UploadTask = uploadBytesResumable(storageRef, ImgToUpload, metaData)
+         UploadTask.on('state-changed', (snapshot)=>{
+             var progbytes = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+             progress.innerHTML = "upload " + progbytes + "%";
+         },
+         (Error)=>{
+             alert('error: image not uploaded');
+         },
+         () => {
+             getDownloadURL(UploadTask.snapshot.ref).then((downloadURL)=>{
+                SavedatatoRealTimeDB(downloadURL)
+                // console.log(downloadURL);
+             });
+         }
+         );
+     }
+
+     
+     
+     //------------------FIREBASE DATABASE-------------------------------
+     
+     const realDB = getDatabase()
+
+     function SavedatatoRealTimeDB(URL) {
+    var x = Math.random()
+     
+    var imgname = document.getElementById('imgname').value
+    var imgprice = document.getElementById('imgprice').value
+    var categorie = document.getElementById('categorie').value
+    var mode = document.getElementById('mode').value
+    var promo = document.getElementById('promo').value
+    var newimgprice = document.getElementById('newimgprice').value
+    
+     
+    set(ref(realDB, 'ImageLinks/'+ Math.round(x * 10000000)), {
+        MyImageName: imgname,
+        ImageUrl: URL,
+        MyImagePrice: imgprice + " XAF",
+        MyImageCategory: categorie,
+        MyImageMode: mode,
+        CodeProduit: Math.round(x * 10000000),
+        Promotion: promo,
+        NewImagePrice: newimgprice + " XAF",
+        TauxPrmotion: (Math.round((newimgprice/imgprice)*100)) - 100 + "%"
+    });
+ }
+     
+      
+
+     
+     
+
+
+
+     upload.onclick = Uploadprocess
+     
+
+      </script>
+
+      
+
+
+    
+</body>
+</html>

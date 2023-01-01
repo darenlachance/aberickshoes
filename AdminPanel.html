@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="titreMagasin">
+        ESPACE ADMINISTRATEUR
+    </div>
+
+    <div id="bars_marque">
+        <p><i class="fa fa-bars"></i></p>
+        <p id="Marque">Administrateur</p>
+        <p><i class="fa fa-search"></i></p>
+    </div>
+
+    <nav id="navMenu">
+        <ul id="ulMenu">
+            <p><i class="fa fa-times"></i></p>
+            <div id="ulwallpaper">
+                <p id="ulMarque">Aberick Shoes</p>
+            </div>
+            <li id="liMenu"><a href="index.html">Acceuil</a></li>
+            <li id="liMenu"><a href="talons&sacs.html">Talons & Sacs a mains</a></li>
+            <li id="liMenu"><a href="tenis.html">Tenis</a></li>
+            <li id="liMenu"><a href="paires.html">Paires monsieurs</a></li>
+            <li id="liMenu"><a href="AdminPanel.html">Admin</a></li>
+            <li id="liMenu"><a href="">658592386/whatsapp</a></li>
+        </ul>
+    </nav>
+
+    <div id="panelmanager">
+        <div>
+        <a href="ajouterproduit.html">
+            <img src="images/ajouterproduit.png" alt="">
+            <p>Ajouter un produit</p>
+        </a>
+        </div>
+    
+
+        <div>
+        <a href="gererproduit.html">
+            <img src="images/gererproduit.jpg" alt="">
+            <p>Modifier/Supprimer un produit</p>
+        </a>
+        </div>
+            
+        <div>
+        <a href="Orders.html">
+            <img src="images/gérercommandes.jpg" alt="">
+            <p>gerer les commandes</p>
+        </a>
+        </div>
+
+    </div>
+
+
+    <nav id="navBottomMenu">
+        <ul id="ulBottomMenu">
+            <li id="liBottomMenu"><a href="index.html" class="actifBottom"><i class="fa fa-home"></i>Home</a></li>
+            <li id="liBottomMenu" class="BottomCategory"><a href="#"><i class="fa fa-list"></i>category</a></li>
+            <li id="liBottomMenu" class="BottomSearch"><a href="#"><i class="fa fa-search"></i>search</a></li>
+            <li id="liBottomMenu"><a href="https://wa.me/657489964"><i class="fa fa-phone"></i>contact</a></li>
+        </ul>
+    </nav>
+
+
+
+   
+
+<script type="module">
+
+// MODULE FIREBASE IMPORT/EXPORT
+import { mouf } from './app.js'
+       mouf()
+
+</script>
+    
+</body>
+</html>

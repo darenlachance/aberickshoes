@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Aberick Shoes</title>
+</head>
+<body>
+    <div id="titreMagasin">
+        VOTRE BOUTIQUE DE MODE
+    </div>
+    
+    <div id="bars_marque">
+        <p><i class="fa fa-bars"></i></p>
+        <p id="Marque">Aberick Shoes</p>
+        <p><i class="fa fa-search"></i></p>
+    </div>
+    
+    <nav id="navMenu">
+        <ul id="ulMenu">
+            <p><i class="fa fa-times"></i></p>
+            <div id="ulwallpaper">
+                <p id="ulMarque">Aberick Shoes</p>
+            </div>
+            <li id="liMenu"><a href="index.html" class="actif">Acceuil</a></li>
+            <li id="liMenu"><a href="talons&sacs.html">Talons & Sacs a mains</a></li>
+            <li id="liMenu"><a href="tenis.html">Tenis</a></li>
+            <li id="liMenu"><a href="paires.html">Paires monsieurs</a></li>
+            <li id="liMenu"><a href="AdminPanel.html">Admin</a></li>
+            <li id="liMenu"><a href="">657489942/whatsapp</a></li>
+        </ul>
+    </nav>
+
+
+
+    <div id="diaporama">
+        <figure>
+            <img src="images/aberickslide5.jpg">
+            <img src="images/aberickslide6.jpg">
+            <img src="images/aberickslide7.jpg">
+            <img src="images/aberickslide2.jpg">
+            <img src="images/aberickslide3.jpg">
+            <img src="images/aberickslide4.jpg">
+
+           
+        </figure>
+    </div>
+
+    
+
+
+      
+
+
+      <div id="divSearchproducts">
+        <div id="titreAndfatimes">
+            <p id="titrerechercherproduit">Rechercher le produit de votre choix</p>
+            <i class="fa fa-times" id="closesearchdiv" ></i>
+        </div>
+        <div id="divsearchbarAndbuttonsearch">
+            <input type="text" id="searchbar" placeholder="rechercher">
+            <button id="buttonsearch"><i class="fa fa-search"></i></button>
+        </div>
+        <p id="titreresultatrecherche">Resultats de la recherche:</p>
+        <ul class="ulsearchproduct"></ul>
+    </div>
+
+
+        
+    <div id="scrollviewpromo">
+        <p>special promo</p>
+        <ul class="fuu"></ul>
+      </div>
+
+
+
+    <div id="LoginAdmin">
+        <i class="fa fa-user-circle"></i>
+
+        <input type="text" id="UsernameAdmin" placeholder="Username">
+        <input type="text" id="PasswordAdmin" placeholder="Password">
+
+        <button id="connectAdmin">connect</button>
+        <p id="note"></p>
+    </div>
+
+    
+    
+
+    <nav id="navBottomMenu">
+        <ul id="ulBottomMenu">
+            <li id="liBottomMenu"><a href="index.html" class="actifBottom"><i class="fa fa-home"></i>Home</a></li>
+            <li id="liBottomMenu" class="BottomCategory"><a href="#"><i class="fa fa-list"></i>category</a></li>
+            <li id="liBottomMenu" class="BottomSearch"><a href="#"><i class="fa fa-search"></i>search</a></li>
+            <li id="liBottomMenu"><a href="https://wa.me/657489964"><i class="fa fa-phone"></i>contact</a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+ <script type="module">
+import { mouf } from './app.js'
+       mouf()
+
+
+ </script>
+    
+</body>
+</html>

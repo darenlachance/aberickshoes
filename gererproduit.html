@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="titreMagasin">
+        ESPACE ADMINISTRATEUR
+    </div>
+
+    <div id="bars_marque">
+        <p><i class="fa fa-bars"></i></p>
+        <p id="Marque">manage products</p>
+        <p><i class="fa fa-search"></i></p>
+    </div>
+
+    <nav id="navMenu">
+        <ul id="ulMenu">
+            <p><i class="fa fa-times"></i></p>
+            <div id="ulwallpaper">
+                <p id="ulMarque">Aberick Shoes</p>
+            </div>
+            <li id="liMenu"><a href="index.html">Acceuil</a></li>
+            <li id="liMenu"><a href="talons&sacs.html">Talons & Sacs a mains</a></li>
+            <li id="liMenu"><a href="tenis.html">Tenis</a></li>
+            <li id="liMenu"><a href="paires.html">Paires monsieurs</a></li>
+            <li id="liMenu"><a href="AdminPanel.html">Admin</a></li>
+            <li id="liMenu"><a href="">658592386/whatsapp</a></li>
+        </ul>
+    </nav>
+
+    <img src="" id="imggererproduit" alt="">
+    <input type="text" id="codegererproduit" placeholder="code du produit">
+    <input type="text" id="nomgererproduit" placeholder="nom du produit">
+    <input type="text" id="prixgererproduit" placeholder="prix du produit">
+    <div>
+        <p>etat promotionnel</p>
+        <input type="text" id="promogererproduit" placeholder="en promotion...">
+        <input type="text" id="newpricegererproduit" placeholder="nouveau prix">
+    </div>
+
+    <button id="selectgererproduit">select</button>
+    <button id="updategererproduit">update</button>
+    <button id="deletegererproduit">delete</button>
+
+
+    <nav id="navBottomMenu">
+        <ul id="ulBottomMenu">
+            <li id="liBottomMenu"><a href="index.html" class="actifBottom"><i class="fa fa-home"></i>Home</a></li>
+            <li id="liBottomMenu" class="BottomCategory"><a href="#"><i class="fa fa-list"></i>category</a></li>
+            <li id="liBottomMenu" class="BottomSearch"><a href="#"><i class="fa fa-search"></i>search</a></li>
+            <li id="liBottomMenu"><a href="https://wa.me/657489964"><i class="fa fa-phone"></i>contact</a></li>
+        </ul>
+    </nav>
+    
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+        import { getDatabase, set, ref, push, child, onValue, onChildAdded, get, update, remove, query, orderByChild, equalTo } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+        import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL, listAll} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-storage.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+     
+
+
+        // MODULE FIREBASE IMPORT/EXPORT
+    import { mouf } from './app.js'
+       mouf()
+
+      
+        // Initialize Firebase
+        const app = initializeApp(mouf());
+        const database = getDatabase(app)
+
+
+
+        
+        
+    //LES VARIABLES
+    var imggererproduit = document.getElementById('imggererproduit')
+    var prixgererproduit = document.getElementById('prixgererproduit')
+    var promogererproduit = document.getElementById('promogererproduit')
+    var newpricegererproduit = document.getElementById('newpricegererproduit')
+    var selectgererproduit = document.getElementById('selectgererproduit')
+    var updategererproduit = document.getElementById('updategererproduit')
+    var deletegererproduit = document.getElementById('deletegererproduit')
+
+    var codegererproduit = document.getElementById('codegererproduit')
+        codegererproduit.value = localStorage.getItem('codeproduitdetails')
+     
+     
+     //------------------FIREBASE DATABASE-------------------------------
+     const realDB = getDatabase()
+     
+     
+     function GetdataFromRealTimeDB() {
+       // var codegererproduit = document.getElementById('codegererproduit').value
+       
+        
+         const DBref = ref(realDB);
+         
+         
+        get(child(DBref, 'ImageLinks/' + codegererproduit.value)).then((snapshot)=>{
+           if(snapshot.exists()){
+             imggererproduit.src = snapshot.val().ImageUrl
+             prixgererproduit.value = snapshot.val().MyImagePrice
+             promogererproduit.value = snapshot.val().Promotion
+             newpricegererproduit.value = snapshot.val().NewImagePrice
+             nomgererproduit.value = snapshot.val().MyImageName
+             console.log(nomgererproduit)
+           }
+
+           })
+           .catch((error)=>{
+            alert("unsuccesful, error "+error)
+           });
+           
+           
+     }
+
+
+
+     function UpdatedataFromRealTimeDB() {
+        var codegererproduit = document.getElementById('codegererproduit').value
+        var nomgererproduit = document.getElementById('nomgererproduit').value
+        var promogererproduit = document.getElementById('promogererproduit').value
+        var newpricegererproduit = document.getElementById('newpricegererproduit').value
+         const DBref = ref(realDB);
+         
+         console.log(parseInt(newpricegererproduit))
+         console.log(parseInt(prixgererproduit.value))
+         console.log((Math.round((parseInt(newpricegererproduit)/parseInt(prixgererproduit.value))*100)))
+         
+         update(ref(realDB, 'ImageLinks/'+ codegererproduit), {
+            MyImageName: nomgererproduit,
+            Promotion: promogererproduit,
+            NewImagePrice: newpricegererproduit + " XAF",
+            TauxPrmotion: (Math.round((parseInt(newpricegererproduit)/parseInt(prixgererproduit.value))*100)) - 100 + "%"
+        });
+           
+           
+     }
+
+     function DeletedataFromRealTimeDB() {
+        var codegererproduit = document.getElementById('codegererproduit').value
+         const DBref = ref(realDB);
+         
+         remove(ref(realDB, 'ImageLinks/'+ codegererproduit))
+         .then(()=>{
+            
+
+            alert("supprimé avec succès")
+         })
+         .catch((error)=>{
+            alert('image non supprimé. erreur ' + error)
+         })
+           
+           
+     }
+
+     
+
+     
+
+     
+
+
+
+     
+     //retrieve.onclick = GetdataFromRealTimeDB
+     selectgererproduit.onclick = GetdataFromRealTimeDB
+     updategererproduit.onclick = UpdatedataFromRealTimeDB
+     deletegererproduit.onclick = DeletedataFromRealTimeDB
+
+      </script>
+
+
+
+
+
+    
+    
+</body>
+</html>
