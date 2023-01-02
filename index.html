@@ -239,10 +239,13 @@
 
 
                 var UsernameOfAdmin =  localStorage.getItem('UsernameAdmin')
+                
+                try{
                 if(UsernameOfAdmin.toLowerCase() == "aberick"){
                 console.log(UsernameOfAdmin)
                  li5.classList.add('li5imgvisible')
                   }
+                }catch{}
 
                   buttonmodifierproduit.addEventListener('click', ()=>{
                     window.open('gererproduit.html')
