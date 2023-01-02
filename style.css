@@ -537,6 +537,7 @@ input{
     width: 100%;
     background-color: aliceblue;
     border-radius: 5px;
+    display: none;
 }
 
 .li1promoimg, .li2promoimg, .li3promoimg, .li4promoimg{
