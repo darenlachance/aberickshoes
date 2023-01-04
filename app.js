@@ -65,7 +65,7 @@ try{
             localStorage.setItem('UsernameAdmin', UsernameAdmin)
             localStorage.setItem('PasswordAdmin', PasswordAdmin)
             
-           // window.open('AdminPanel.html')
+            window.open('AdminPanel.html')
             
         }else{
            note.innerText = 'Username ou Password Incorrect!'
