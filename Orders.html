@@ -188,24 +188,18 @@
                 }
 
 
-                function GetimgFromRealTimeDB() {
-         
-         
-         
-        get(child(DBref, 'ImageLinks/' + li1.innerText)).then((snapshot)=>{
+                  const DBref = ref(realDB);
+        get(child(DBref, 'ImageLinks/' + 7750245)).then((snapshot)=>{
            if(snapshot.exists()){
+            console.log("hello")
              img.src = snapshot.val().ImageUrl
+             
            }
 
            })
            .catch((error)=>{
             alert("unsuccesful, error "+error)
            });
-
-
-        }
-
-        GetimgFromRealTimeDB
 
 
 
