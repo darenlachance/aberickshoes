@@ -61,7 +61,7 @@ try{
     connectAdmin.addEventListener('click', ()=>{
         var UsernameAdmin = document.getElementById('UsernameAdmin').value
         var PasswordAdmin = document.getElementById('PasswordAdmin').value
-        if(UsernameAdmin.toLowerCase() == "aberick" & PasswordAdmin == 2001){
+        if(UsernameAdmin.toLowerCase().trim() == "aberick" & PasswordAdmin == 2001){
             localStorage.setItem('UsernameAdmin', UsernameAdmin)
             localStorage.setItem('PasswordAdmin', PasswordAdmin)
             
