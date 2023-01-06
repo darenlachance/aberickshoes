@@ -146,7 +146,15 @@
             Promotion: promogererproduit,
             NewImagePrice: newpricegererproduit + " XAF",
             TauxPrmotion: (Math.round((parseInt(newpricegererproduit)/parseInt(prixgererproduit.value))*100)) - 100 + "%"
-        });
+        })
+         .then(()=>{
+            
+
+            alert("modifié avec succès")
+         })
+         .catch((error)=>{
+            alert('produit non modifié. erreur ' + error)
+         });
            
            
      }
