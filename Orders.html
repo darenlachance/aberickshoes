@@ -209,7 +209,7 @@
 
 
                 const DBref = ref(realDB);
-        get(child(DBref, 'ImageLinks/' + 7750245)).then((snapshot)=>{
+        get(child(DBref, 'ImageLinks/' + product.CodeProduit)).then((snapshot)=>{
            if(snapshot.exists()){
             console.log("hello")
              img.src = snapshot.val().ImageUrl
