@@ -612,7 +612,7 @@ input{
     display: flex;
     justify-content: space-between;
     margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 #visiteurs{
