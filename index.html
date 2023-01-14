@@ -246,13 +246,18 @@
 
                 var UsernameOfAdmin =  localStorage.getItem('UsernameAdmin')
                 var visiteurs = document.getElementById('visiteurs')
+                
+                try{
                 if(UsernameOfAdmin.toLowerCase().trim() == "aberick"){
                 //console.log(UsernameOfAdmin)
                  li5.classList.add('li5imgvisible')
                  visiteurs.style.visibility = 'visible'
                  buttonmodifierproduit.style.display = "block"
                   }
+                }catch{}
+                
 
+         
                   buttonmodifierproduit.addEventListener('click', ()=>{
                     window.open('gererproduit.html')
                     localStorage.setItem('codeproduitdetails', product.CodeProduit)
