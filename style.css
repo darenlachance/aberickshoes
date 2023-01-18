@@ -1,0 +1,1222 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: whitesmoke;
+    position: relative;
+   
+}
+#titreMagasin{
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+#Marque, #ulMarque{
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 5px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin-top: 5px;
+    margin-bottom: 0;
+    
+}
+
+#ulMarque{
+    color: whitesmoke;
+    text-align: center;
+    display: none;
+}
+
+.fa-bars{
+    font-size: 30px;
+    margin-top: 5px;
+    visibility: hidden;
+}
+
+.fa-search{
+    font-size: 30px;
+    margin-top: 5px;
+    
+}
+
+#bars_marque{
+    margin-left: 5px;
+    margin-right: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#englobe{
+    background-color: rgb(218, 216, 216);
+}
+
+
+
+
+/*ADMINPANEL*/
+#panelmanager{
+  display: flex;
+  flex-wrap: wrap;
+  
+  
+}
+
+#panelmanager div{
+    width: 47%;
+  border-radius: 10px;
+  height: 180px;
+  margin: 5px;
+  background-color: white;
+  
+  
+}
+
+#panelmanager img{
+    width: 100%;
+  border-radius: 10px;
+  height: 120px;
+}
+
+#panelmanager p{
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 5px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-align: center;
+}
+
+
+/*AJOUTERPRODUIT*/
+#divAjouterProduit{
+    
+}
+#divAjouterProduit input, #divAjouterProduit div, #divAjouterProduit button{
+    margin: 10px;
+    font-weight: normal;
+    font-size: 15px;
+    margin-left: 5px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+#divAjouterProduit p, select{
+    font-weight: normal;
+    font-size: 15px;
+    margin-left: 5px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+#myimg{
+    width: 200px;
+}
+
+#divPromotion{
+    border: 1px solid black;
+    
+}
+
+select{
+    width: 200px;
+    height: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*MON MENU*/
+#ulMenu{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#liMenu:hover a{
+    background-color: red;
+}
+
+#liMenu{
+    list-style-type: none;
+}
+
+#liMenu a{
+    text-decoration: none;
+    color: whitesmoke;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+
+
+
+
+/*PRODUITS A L ACCEUIL*/
+.productimg{
+    width: 200px;
+    height: 200px;
+}
+
+.ouf{
+    
+    
+}
+
+.productdiv{
+    border: 1px solid blue;
+    margin: 5px;
+    float: left;
+    
+}
+
+.li1img, .li2img{
+    list-style-type: none;
+    
+}
+
+.li2img{
+    color: rgb(201, 86, 86);
+}
+
+
+/*DIAPORAMA*/
+#diaporama{
+    display: none;
+}
+
+/*IMAGE POUR ICONE MODE*/
+#imagemode{
+    display: none;
+}
+
+
+
+
+
+
+
+/*PRODUCTS DETAILS*/
+#ProductsDetails{
+    
+}
+
+#ImgViewdetails{
+    width: 30%;
+    height: 400px;
+    float: left;
+    margin: 10px;
+}
+
+#ImgViewPourCommander{
+    width: 70%;
+    height: 200px;
+    margin-left: 15%;
+}
+
+#CardPourCommander{
+    display: none;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 290px;
+    height: 30px;
+}
+
+#NameViewDetails{
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+#PriceViewDetails{
+    font-size: 22px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: rgb(201, 86, 86);
+}
+
+#explicationcommande p{
+    font-size: 18px;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+#makeorder{
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+#SendOrders{
+    width: 300px;
+    height: 30px;
+}
+
+
+
+@media(max-width:800px){
+    
+    #Marque{
+        text-align: center;
+        font-weight: bold;
+        font-size: 30px;
+        margin-left: 5px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        
+    }
+
+
+
+}
+
+@media(max-width:600px){
+
+    body{
+        position: relative;
+        background-color: rgb(240, 240, 240);
+    }
+    
+    #Marque{
+        text-align: center;
+        font-weight: bold;
+        font-size: 30px;
+        margin-left: 5px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        
+    }
+
+    #ulMarque{
+        color: whitesmoke;
+        text-align: center;
+        display: block;
+    }
+
+    
+
+
+
+    /*MON MENU*/
+#ulMenu{
+    display: block;
+    justify-content: space-between;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    right: 100%;
+    top: 15px;
+    height: 1000px;
+    
+    width: 100%;
+    margin-top: 20px;
+    transition: ease 0.5s;
+    background-image: url('images/ulmenuaffiche1.jpg');
+    z-index: 1;
+    
+}
+
+#ulwallpaper{
+    background-image: url('images/ulwallpaper1.jpg');
+    height: 20%;
+}
+
+#liMenu:hover a{
+    background-color: red;
+}
+
+#liMenu{
+    list-style-type: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    
+}
+
+#liMenu a{
+    text-decoration: none;
+    color: whitesmoke;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+#liMenu .actif{
+    color: rgb(89, 89, 228);
+    font-size: 25px;
+}
+
+.fa-bars{
+    font-size: 30px;
+    margin-top: 5px;
+    visibility: visible;
+    color: whitesmoke;
+}
+
+.fa-search{
+    font-size: 30px;
+    margin-top: 5px;
+    color: whitesmoke;
+    visibility: visible;
+}
+
+.fa-times{
+    font-size: 30px;
+    margin-top: 5px;
+    color: whitesmoke;
+    float: right;
+    margin-top: -35px;
+    margin-right: 2%;
+    
+    
+}
+
+
+
+
+
+
+/*MON BOTTOM MENU*/
+#navBottomMenu{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+   
+}
+
+#ulBottomMenu{
+    display: flex;
+    background-color: whitesmoke;
+    justify-content: space-between;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+#liBottomMenu{
+    font-size: 100%;
+    list-style-type: none; 
+    margin-top: 8px;
+    margin-bottom: 8px;
+    
+    
+}
+
+#liBottomMenu a{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    align-items: center;
+    color: black;
+    
+}
+
+#liBottomMenu i{
+    font-weight: bold;
+    
+}
+
+#liBottomMenu .fa-search{
+    font-size: 100%;
+    margin-top: 0;
+    color: black;
+    
+}
+
+#liBottomMenu .actifBottom{
+    color: rgb(238, 73, 73);
+    
+}
+
+
+
+
+
+
+
+
+
+/*PRODUITS A L ACCEUIL*/
+.productimg{
+    width: 100%;
+    height: 200px;
+    border-radius: 3px;
+}
+
+.productpromoimg{
+    width: 100px;
+    height: 90px;
+    border-radius: 3px;
+}
+
+.ouf{
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+.fuu{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+}
+
+
+
+.productdiv{
+    position: relative;
+    width: 47%;
+    border: 1px solid white;
+    margin: 3px;
+    float: left;
+    background-color: white;
+    
+    
+}
+
+.productPromodiv{
+    position: relative;
+    width: 100px;
+    height: 110px;
+    margin: 5px;
+    
+}
+
+
+
+.li1img, .li2img, .li4img, .li5img{
+    list-style-type: none;
+    text-align: center;   
+    
+}
+
+.li5img{
+    visibility: hidden;
+    font-size: 0;
+    
+}
+
+.li5imgvisible{
+    visibility: visible;
+    font-size: 18px;
+}
+
+.buttonmodifierproduit{
+    font-size: 20px;
+    width: 100%;
+    background-color: aliceblue;
+    border-radius: 5px;
+    display: none;
+}
+
+.li1promoimg, .li2promoimg, .li3promoimg, .li4promoimg{
+    list-style-type: none;
+    text-align: center;   
+    
+}
+
+.li2img{
+    color: rgb(201, 86, 86);  
+}
+
+.li4promoimg{
+    
+}
+
+.li4img{
+    color: rgb(216, 55, 55);
+}
+
+.barre{
+    text-decoration: line-through;
+    color: black;
+}
+
+.liInvisible{
+    visibility: hidden;
+}
+
+.li3img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    color: whitesmoke;
+    border-radius: 0px 0px 15px 0px;
+    font-weight: bold;
+    padding: 3px;
+}
+
+.li3promoimg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    color: whitesmoke;
+    border-radius: 0px 0px 15px 0px;
+    font-weight: bold;
+    padding: 3px;
+    font-size: 10px;
+}
+
+#scrollviewpromo{
+    margin-top: 10px;
+    height: 140px;
+    margin-bottom: 10px;
+    background-color: aliceblue;
+    
+}
+
+#scrollviewpromo p{
+    font-weight: bold;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    
+}
+
+#scrollviewpromo #divPromoEtVisiteurs{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+#visiteurs{
+    visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SEARCH PRODUCTS*/
+#divSearchproducts{
+    background-color: rgb(250, 250, 250);
+    min-height: 200%;
+    position: absolute;
+    z-index: 1;
+    left: -100%;
+    width: 100%;
+    top: 0px;
+    transition: all ease 0.8s;
+    
+}
+
+#divsearchbarAndbuttonsearch{
+    margin-top: 20px;
+    display: flex;
+    margin-left: 10px;
+    
+}
+
+#divSearchproducts .fa-times{
+    color: black;
+    margin-right: 10px;
+    
+    
+}
+
+#titreAndfatimes{
+    margin-top: 20px;
+}
+
+#divSearchproducts input{
+    border-radius: 15px;
+}
+
+
+
+
+.Searchproductimg{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 3px;
+    
+}
+
+#searchbar{
+    width: 80%;
+    background-color: rgb(250, 250, 250);
+    
+}
+
+.ulsearchproduct{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(250, 250, 250);
+    overflow-y: auto;
+    
+}
+
+.Searchproductdiv{
+    margin-top: 3px;
+    border: 1px solid gainsboro;
+    height: 100px;
+    
+}
+
+#buttonsearch{
+    width: 10%;
+    background-color: rgb(250, 250, 250);;
+    border: none;
+    
+}
+
+.li1Searchimg, .li2Searchimg, .li3Searchimg, .li4Searchimg{
+    float: none;
+    list-style: none;
+    
+}
+
+#titrerechercherproduit, #titreresultatrecherche{
+    font-weight: bold;
+    font-size: 90%;
+    margin-left: 5px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+#titreresultatrecherche{
+    padding: 10px;
+    border: 1px solid gainsboro;
+    background-color: aliceblue;
+}
+
+
+
+
+
+
+
+/*GERER PRODUIT*/
+#imggererproduit{
+    width: 100px;
+    height: 100px;
+}
+
+#divgererproduit{
+
+}
+
+
+/*GERER LES COMMANDES*/
+
+.li6img, .li7img, .li8img{
+    list-style-type: none;
+    text-align: center;   
+    
+}
+
+.buttonState{
+    background-color: red;
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    color: whitesmoke;
+}
+
+.buttonStateValidaded{
+    background-color: green;
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    color: whitesmoke;
+}
+
+
+
+
+
+
+/*PRODUCTS DETAILS*/
+#ProductsDetails{
+    
+}
+
+#ImgViewdetails{
+    width: 100%;
+    height: 450px;
+    margin: 0;
+    position: relative;
+}
+
+#ImgViewPourCommander{
+    width: 200px;
+    height: 200px;
+}
+
+.tauxpromotionViewDetails{
+    position: absolute;
+    top: 1;
+    left: 0;
+    background-color: red;
+    color: whitesmoke;
+    border-radius: 0px 0px 15px 0px;
+    font-weight: bold;
+    padding: 3px;
+}
+
+#titreCardPourCommander{
+    font-size: 25px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+#CardPourCommander{
+    display: none;
+    position: absolute;
+    background-color: whitesmoke;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+}
+
+#CardPourCommander_div{
+    margin-left: 10%;
+}
+
+#CardPourCommander .fa-times{
+    color: black;
+    
+}
+
+#CardPourCommander input{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 290px;
+    height: 30px;
+    
+}
+
+#NameViewDetails{
+    font-size: 25px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin-left: 10px;
+    
+}
+
+#PriceViewDetails{
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: rgb(201, 86, 86);
+    margin-left: 10px;
+}
+
+.NewPriceViewDetails{
+    margin-left: 10px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+#CodeproduitViewDetails{
+    color: green;
+    visibility: hidden;
+    font-size: 0;
+    margin-left: 10px;
+}
+
+#explicationcommande p{
+    font-size: 15px;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin: 10px;
+    
+}
+
+#explicationcommande i{
+    font-size: 18px;
+   color: orange;
+   margin-right: 5px;
+    
+}
+
+#makeorder{
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+#SendOrders{
+    width: 300px;
+    height: 30px;
+}
+
+
+
+
+
+
+/*DIAPORAMA*/
+@-webkit-keyframes sliderleft{
+    0%{left: 0%;}
+    20%{left: 0%;}
+    25%{left: -100%;}
+    45%{left: -100%;}
+    50%{left: -200%;}
+    70%{left: -200%;}
+    75%{left: -300%;}
+    95%{left: -300%;}
+    100%{left: -400%;}
+    
+}
+
+#diaporama figure img{
+    width: 16.6666667%;
+    float: left;
+}
+
+#diaporama figure{
+    position: relative;;
+    width: 300%;
+    -webkit-animation: 25s sliderleft infinite;
+}
+
+#diaporama{
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    max-width: 600px;
+    height: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+
+/*IMAGE POUR ICONE MODE*/
+#imagemode{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 225px;
+    margin-left: 6%;
+    margin-right: 3%;
+}
+
+
+
+#imagemode img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    
+}
+
+/*MODE HOMME*/
+#modehomme img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    z-index: -1;
+}
+
+#modehomme p{
+    position: absolute;
+    top: 170px;
+    left: 60%;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+
+/*MODE FEMME*/
+#modefemme img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    z-index: -1;
+}
+
+#modefemme p{
+    position: absolute;
+    top: 170px;
+    left: 60%;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+
+/*MODE ENFANT*/
+#modeenfant img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    z-index: -1;
+}
+
+#modeenfant p{
+    position: absolute;
+    top: 170px;
+    left: 60%;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+
+/*MODE PROMO*/
+#modepromo img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    z-index: -1;
+}
+
+#modepromo p{
+    position: absolute;
+    top: 170px;
+    left: 58%;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    
+}
+
+
+
+
+/*AFFICHE POUR TENIS*/
+#modetenis img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    z-index: -1;
+}
+
+
+
+#modetenis p{
+    position: absolute;
+    top: 170px;
+    left: 60%;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+
+
+/*AFFICHE POUR TALONSACS*/
+#modetalonsac img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    z-index: -1;
+}
+
+
+
+#modetalonsac p{
+    position: absolute;
+    top: 170px;
+    left: 60%;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+
+
+
+/*AFFICHE POUR PAIRES MONSIEUR*/
+#modepaire img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    z-index: -1;
+}
+
+#modepaire p{
+    position: absolute;
+    top: 170px;
+    left: 60%;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+
+/*LOGIN ADMIN*/
+#LoginAdmin{
+    text-align: center;
+}
+
+.fa-user-circle{
+    font-size: 100px;
+    
+}
+
+#UsernameAdmin, #PasswordAdmin{
+    margin-left: 10%;
+}
+
+#note{
+    font-size: 20px;
+    color: red;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:500px){
+
+    body{
+        position: relative;
+    }
+
+
+
+    /*DIAPORAMA*/
+@-webkit-keyframes sliderleft{
+    0%{left: 0%;}
+    20%{left: 0%;}
+    25%{left: -100%;}
+    45%{left: -100%;}
+    50%{left: -200%;}
+    70%{left: -200%;}
+    75%{left: -300%;}
+    95%{left: -300%;}
+    100%{left: -400%;}
+    
+}
+
+#diaporama figure img{
+    width: 16.6666667%;
+    float: left;
+}
+
+#diaporama figure{
+    position: relative;;
+    width: 300%;
+    -webkit-animation: 20s sliderleft infinite;
+}
+
+#diaporama{
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    max-width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin: 0 auto;
+    background-image: url('images/affichetenis1.jpg');
+    
+}
+
+
+
+/*IMAGE POUR ICONE MODE*/
+#imagemode{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 125px;
+    margin-left: 6%;
+    margin-right: 3%;
+}
+
+#imagemode div{
+    width: 70px;
+    
+    
+}
+
+#imagemode img{
+    width: 50px;
+    height: 50px;
+    border-radius: 45%;
+    
+}
+
+#imagemode p{
+    font-weight: bold;
+    
+}
+
+
+}
